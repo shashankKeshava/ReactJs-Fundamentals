@@ -10,7 +10,8 @@ var USER_DATA = {
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-/*Focused
+/*
+Focused
 Independent
 Reusable
 Small
@@ -33,13 +34,26 @@ var ProfileLink = React.createClass({
     render: function() {
         return (
             <div> 
-        <a href = {'https://github.com/' + this.props.username }> 
+        <Link href = {'https://github.com/' + this.props.username }> 
             {this.props.username}
-        </a>
+        </Link>
     </div>
         )
     }
 });
+
+var Link = React.createClass({
+    changeURL: function() {
+        window.location.replace(this.props.href)
+    },
+    render: function() {
+        return (
+            <span style={{color:'blue',cursor:'pointer'}} onClick={this.changeURL}> 
+                {this.props.children}
+            </span>)
+    }
+});
+
 
 var ProfileName = React.createClass({
     render: function() {
