@@ -3,8 +3,8 @@
 
 var USER_DATA = {
     name: 'Shashank K',
-    username: 'Kexcaliber',
-    image: 'http://dayt.se/uploads/full/Vikings-TMNS.png'
+    username: 'shashankKeshava',
+    image: 'https://avatars1.githubusercontent.com/u/15323807?v=3&s=460'
 };
 
 var React = require('react');
@@ -19,34 +19,44 @@ Testable
 
 var HelloWorld = React.createClass({
     render: function() {
-        return (<div> Hello World ReactJS!!!! </div>)
+        return (<div> Hello {this.props.name} ReactJS!!!! </div>)
     }
 });
 
-
-var Container = React.createClass({
+var ProfilePic = React.createClass({
     render: function() {
-        return (<Wrapper>
-            <Welcome user = { USER_DATA }/>  <Hello/>
-            </Wrapper>)
+        return <img src={this.props.imageURL} style={{height: 100, width:100}}/>
     }
 });
 
-
-
-var Welcome = React.createClass({
+var ProfileLink = React.createClass({
     render: function() {
-        return <div> Welcome { this.props.user.name }! </div>
+        return (
+            <div> 
+        <a href = {'https://github.com/' + this.props.username }> 
+            {this.props.username}
+        </a>
+    </div>
+        )
     }
 });
 
-var Hello = React.createClass({
+var ProfileName = React.createClass({
     render: function() {
-        return <div> Hello ReactJS Program! </div>
+        return <div> {this.props.name}</div>
     }
 });
 
 
-//ReactDOM.render(<Container />, document.getElementById('app'));
+var Avator = React.createClass({
+    render: function() {
+        return (<div> 
+            <ProfilePic imageURL={this.props.user.image}/>
+            <ProfileName name={this.props.user.name} />
+            <ProfileLink username={this.props.user.username} />
+         </div>)
+    }
+});
 
-ReactDOM.render(<HelloWorld />, document.getElementById('app'));
+
+ReactDOM.render(<Avator user={USER_DATA} />, document.getElementById('app'));
