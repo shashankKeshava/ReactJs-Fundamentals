@@ -13,10 +13,9 @@ var routes = (
   <Route
          path='/'
          component={ Main }>
-    <Route
-           path='/home'
-           component={ Home }>
-    </Route>
+    <IndexRoute
+                path='/home'
+                component={ Home } />
   </Route>
 </Router>
 );
