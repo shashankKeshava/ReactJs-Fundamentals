@@ -17,6 +17,22 @@ Small
 Testable
 */
 
+var Link = React.createClass({
+
+    changeURl: function() {
+        window.location.replace(this.props.href);
+    },
+
+    render: function() {
+        return (<span style={{
+                color: 'blue',
+                cursor: 'pointer'
+            }} onClick={this.changeURl}>
+        {this.props.children}
+        </span>)
+    }
+})
+
 var HelloWorld = React.createClass({
     render: function() {
         return (<div> Hello {this.props.name} ReactJS!!!! </div>)
@@ -25,7 +41,10 @@ var HelloWorld = React.createClass({
 
 var ProfilePic = React.createClass({
     render: function() {
-        return <img src={this.props.imageURL} style={{height: 100, width:100}}/>
+        return <img src={this.props.imageURL} style={{
+                height: 100,
+                width: 100
+            }}/>
     }
 });
 
@@ -33,9 +52,9 @@ var ProfileLink = React.createClass({
     render: function() {
         return (
             <div> 
-        <a href = {'https://github.com/' + this.props.username }> 
+        <Link href = {'https://github.com/' + this.props.username}> 
             {this.props.username}
-        </a>
+        </Link>
     </div>
         )
     }
