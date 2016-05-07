@@ -9,11 +9,16 @@ var Main = require('../components/Main');
 var Home = require('../components/Home');
 
 var routes = (
-    <Router>
-  		<Route path='/' component={Main}>
-  		<Route path='/home' component={Home}>
+<Router>
+  <Route
+         path='/'
+         component={ Main }>
+    <Route
+           path='/home'
+           component={ Home }>
     </Route>
-	</Router>
+  </Route>
+</Router>
 );
 
-module.exports routes;
+module.exports = routes;
