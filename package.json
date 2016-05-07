@@ -10,9 +10,9 @@
   "author": "Tyler McGinnis <tylermcginnis33@gmail.com> (http://tylermcginnis.com)",
   "license": "ISC",
   "dependencies": {
-    "react": "~0.14.7",
-    "react-dom": "~0.14.7",
-    "react-router": "~2.0.1"
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "react-router": "^2.4.0"
   },
   "devDependencies": {
     "babel-core": "~6.7.4",
