@@ -11,7 +11,7 @@ var Home = React.createClass({
                  style={ transparentBg }>
               <h1>GitHub Battle</h1>
               <p className='lead'>
-                What even in jquery?
+                Spartans! Ready your breakfast and eat hearty... For tonight, we dine in hell!
               </p>
               <Link to='/playerOne'>
               <button
